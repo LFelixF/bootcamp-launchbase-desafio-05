@@ -1,0 +1,271 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+
+:root {
+    --primary-color: rgb(103, 103, 192);
+    --secundary-color: rgb(243, 36, 36);
+}
+
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-color);
+}
+
+.links {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    padding: 32px;
+}
+
+.links a {
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.links a + a {
+    margin-left: 25px;
+}
+
+.links a:hover {
+    color: var(--primary-color);
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 200ms ease-in;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+/* ======== CARD ==========*/
+
+.card {
+    width: 800px;
+    min-height: 400px;
+    background-color: white;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    box-shadow: 0 4px 6px -2px;
+    animation: up 400ms ease-in;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    color: #777;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.7px;
+}
+
+.details .item div:nth-child(2) {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.details .item span {
+    background-color: var(--secundary-color);
+    padding: 8px 16px;
+    border-radius: 16px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 4px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--secundary-color);
+}
+
+/* CREATE */ 
+
+input {
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 5px;
+}
+
+select option,
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+select {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    outline: none;
+}
+
+button[type="submit"],
+a.button {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 8px 32px;
+    border-radius: 12px;
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+select,
+input[type="radio"],
+button[type="submit"]:hover {
+    cursor: pointer;
+}
+
+/* SHOW */
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* EDIT */
+
+#form-delete button[type="submit"] {
+    margin-top: 8px;
+    background-color: red;
+}
+
+/* INDEX */
+.table-container {
+    display: block;
+    padding: 40px;
+}
+
+table {
+    border-spacing: 0;
+    font-size: 16px;
+}
+
+table thead tr th,
+table tbody tr td {
+    padding: 16px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table thead tr th {
+    font-size: 14px;
+    color: #777;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+table tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 68px 1fr;
+    align-items: center;
+}
+
+table tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 24px;
+    border: 2px solid white;
+    box-shadow: 3px 1px 6px -4px;
+}
+
+.table-container > a,
+table tbody tr td:last-child a {
+    background-color: var(--secundary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table-container > a:hover,
+table tbody tr td:last-child a:hover {
+    background-color: var(--primary-color);
+    transition: 150ms;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    text-align: center;
+}
+
+table tbody tr td:nth-child(2) span {
+    background-color: rgb(240, 240, 240);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.table-container > a {
+    margin-bottom: 16px;
+    display: inline-block;
+}
