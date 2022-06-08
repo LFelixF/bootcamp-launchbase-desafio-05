@@ -14,14 +14,6 @@ module.exports = {
         return res.render("teachers/create")
     },
     post(req, res) {
-        const keys = Object.keys(req.body)
-    
-        for(let key of keys) {
-            if(req.body[key] == "") {
-                return res.send("Please, fill all fields!")
-            }
-        }
-
         Teacher.create(req.body, teacher => {
             return res.redirect(`/teachers/${teacher.id}`)
         })

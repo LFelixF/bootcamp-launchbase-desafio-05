@@ -1,3 +1,17 @@
+// Formulario
+const form = document.querySelector(".form-fields")
+const formInput = document.querySelectorAll(".form-fields input")
+
+form.addEventListener("submit", event => {
+    for(let input of formInput) {
+        if(input.value == "") {
+            event.preventDefault()
+            
+            return alert("Por favor, preencha todos os campos!")
+        }
+    }
+})
+
 // Menu ativo
 const pageCurrent = window.location.pathname
 const links = document.querySelectorAll("header .links a")
